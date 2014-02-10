@@ -10,10 +10,10 @@
   define('cache_dir', getcwd().'/cache/');
 
   $imgWidth = $_GET['w'];
-  if(!empty($_GET['h'])) { $imgHeight = $_GET['h']; } else { $imgHeight = $imgWidth; }
-  if(!empty($_GET['g'])) { $grey = true; } else { $grey = false; }
-  if(!empty($_GET['regen'])) { $regen = true; } else { $regen = false; }
-  $referer =  $_SERVER['HTTP_REFERER'];
+  $imgHeight = !empty($_GET['h']) ? $_GET['h'] : $imgWidth;
+  $grey = !empty($_GET['g']) ? true : false;
+  $regen = !empty($_GET['regen']) ? true : false;
+  $referer = !empty($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : "---";
 
   if($imgWidth < 1) { $imgWidth = 1; }
   elseif($imgWidth > 1280) { $imgWidth = 1280; }
