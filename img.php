@@ -13,6 +13,7 @@
   if(!empty($_GET['h'])) { $imgHeight = $_GET['h']; } else { $imgHeight = $imgWidth; }
   if(!empty($_GET['g'])) { $grey = true; } else { $grey = false; }
   if(!empty($_GET['regen'])) { $regen = true; } else { $regen = false; }
+  $referer =  $_SERVER['HTTP_REFERER'];
 
   if($imgWidth < 1) { $imgWidth = 1; }
   elseif($imgWidth > 1280) { $imgWidth = 1280; }
@@ -42,13 +43,13 @@
     imagepng($newFile, $fileName);
 
     if($regen === true) {
-      log_it(601, "$fileName regenerated.");
+      log_it(601, "$fileName regenerated. (".$referer.")");
     } else { 
-      log_it(600, "$fileName generated.");
+      log_it(600, "$fileName generated. (".$referer.")");
     }
   }
   else {
-    log_it(602, "$fileName loaded from cache.");
+    log_it(602, "$fileName loaded from cache. (".$referer.")");
   }
 
   readfile($fileName);
