@@ -145,6 +145,24 @@
       position: absolute;
       bottom: 15px; right: 15px; left: 15px;
     }
+    footer small {
+      display: block;
+      margin-top: 8px;
+    }
+    .github-link {
+      padding: 4px 4px 4px 24px;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowNUNCRjhGMzkzRUUxMUUzQkE3QzgzNzA5MTNBOEYzNCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowNUNCRjhGNDkzRUUxMUUzQkE3QzgzNzA5MTNBOEYzNCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjA1Q0JGOEYxOTNFRTExRTNCQTdDODM3MDkxM0E4RjM0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjA1Q0JGOEYyOTNFRTExRTNCQTdDODM3MDkxM0E4RjM0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+JWeKAwAAAN1JREFUeNqkU4ERgyAMxBHsCKzACq7ACl3BFVihK7iCjsAKdgQ7Ag295/qmaOk1d38qJE/4vF1KyVTCCjx9PwSL4P6RmQkITjCn45gElmu4+JraYhN4TeBpM54UR+Rs6PZF0GMhRwDhIBjx5HdDV4yFYKQTgtKkBtbI64WhgYC1unXpPcc8qotpi1Kz/E1gSMAEQb9dwVH+bGCOX0Tc5bMoAd1M8AV3Y7GmXTqUhDzTFVMoV2LL+oqpZnaiQ2HAybbSurZzr/8FR6evJwSx2FgTFFuPBwQr9naTegowAG1a3rA1z5lXAAAAAElFTkSuQmCC);
+      background-position: 4px 4px;
+      background-repeat: no-repeat;
+      font-size: 90%;
+      font-weight: bold;
+      text-decoration: none;
+      line-height: 16px;
+    }
+    .github-link:hover,
+    .github-link:focus {
+      background-color: #333;
+    }
   </style>
 </head>
 <body>
@@ -168,6 +186,7 @@
       </div>
     </div>
     <footer>
+      <a href="https://github.com/querkmachine/placeponi.es" class="github-link">Source on GitHub</a>
       <small>
         My Little Pony: Friendship is Magic is &copy; Hasbro. Placeponi.es is not affiliated in any way with Hasbro or DHX Media. No copyright infringement intended. Another one of <a href="//greysadventures.com">Grey's Adventures</a>.
       </small>
