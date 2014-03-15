@@ -5,8 +5,8 @@
   if(date('H', $now) >= 21 || date('H', $now) <= 6) { 
     $file .= "/g";
   }
-  $file .= "/5" . substr($now, 1, 2);
-  $file .= "/4" . substr($now, 5, 2);
+  $file .= "/9" . substr($now, 1, 2);
+  $file .= "/6" . substr($now, 5, 2);
 ?><!doctype html>
 <!-- 
 
