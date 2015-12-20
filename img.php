@@ -75,27 +75,25 @@ if(!file_exists($newFilename) || $imageRegen === true) {
 }
 
 // Connect to the database to log this shizzle
-if(parse_url($referrer, PHP_URL_HOST) != "placeponi.es") {
-	try {
-		$db = new PDO("mysql:host=".Config::DB_HOST.";dbname=".Config::DB_NAME, Config::DB_USER, Config::DB_PASS);
-		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-		$query = $db->prepare("INSERT INTO visits (requestDatetime, imageWidth, imageHeight, imageGreyscale, imageVariant, imageGenerated, referrerUrl, referrerDomain) VALUES (:datetime, :width, :height, :greyscale, :variant, :generated, :url, :domain)");
-		$query->execute(array(
-			"datetime" => date("Y-m-d H:i:s"),
-			"width" => $imageWidth, 
-			"height" => $imageHeight,
-			"greyscale" => $imageGrayscale,
-			"variant" => $imageVariant,
-			"generated" => $imageRegen,
-			"url" => $referrer,
-			"domain" => parse_url($referrer, PHP_URL_HOST)
-		));
-	}
-	catch(PDOException $e) {
-		// Do nothing for now I guess???
-		// $e->getMessage();
-	}
+try {
+	$db = new PDO("mysql:host=".Config::DB_HOST.";dbname=".Config::DB_NAME, Config::DB_USER, Config::DB_PASS);
+	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+	$query = $db->prepare("INSERT INTO visits (requestDatetime, imageWidth, imageHeight, imageGreyscale, imageVariant, imageGenerated, referrerUrl, referrerDomain) VALUES (:datetime, :width, :height, :greyscale, :variant, :generated, :url, :domain)");
+	$query->execute(array(
+		"datetime" => date("Y-m-d H:i:s"),
+		"width" => $imageWidth, 
+		"height" => $imageHeight,
+		"greyscale" => $imageGrayscale,
+		"variant" => $imageVariant,
+		"generated" => $imageRegen,
+		"url" => $referrer,
+		"domain" => parse_url($referrer, PHP_URL_HOST)
+	));
+}
+catch(PDOException $e) {
+	// Do nothing for now I guess???
+	// $e->getMessage();
 }
 
 // Output the requested image
