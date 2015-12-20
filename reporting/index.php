@@ -1,12 +1,13 @@
 <?php 
 	require_once("../config.php");
+	error_reporting(E_ALL);
 	try {
 		$db = new PDO("mysql:host=".Config::DB_HOST.";dbname=".Config::DB_NAME, Config::DB_USER, Config::DB_PASS);
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 	}
 	catch(PDOException $e) {
-		$e->getMessage();
+		echo $e->getMessage();
 	}
 	function urlMaker($width, $height, $greyscale = false) {
 		$output = "<a href=\"http://placeponi.es/";
