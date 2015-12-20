@@ -1,11 +1,6 @@
 RewriteEngine On
 RewriteBase /
 
-#RewriteRule ^/?$ /300/250 [R=302,NC]
-RewriteRule ^([0-9]+)/?$ img.php?w=$1&h=$1
-RewriteRule ^([0-9]+)/([0-9]+)/?$ img.php?w=$1&h=$2
-RewriteRule ^([0-9]+)/([0-9]+)/regen?$ img.php?w=$1&h=$2&regen=1
-
-RewriteRule ^g/([0-9]+)/?$ img.php?w=$1&h=$1&g=true
-RewriteRule ^g/([0-9]+)/([0-9]+)/?$ img.php?w=$1&h=$2&g=true
-RewriteRule ^g/([0-9]+)/([0-9]+)/regen?$ img.php?w=$1&h=$2&g=true&regen=1
+RewriteCond %{REQUEST_URI} !^/reporting(/.*|)$ [NC]
+RewriteCond %{REQUEST_URI} !/index\.php$ [NC]
+RewriteRule ^([a-zA-Z0-9\/\-\_,]+)$ img.php?params=$1 [L]

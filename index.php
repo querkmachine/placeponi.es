@@ -1,209 +1,175 @@
-<?php
-  date_default_timezone_set("Europe/London");
-  $now = time();
-  $file = "//placeponi.es";
-  if(date('H', $now) >= 21 || date('H', $now) <= 6) { 
-    $file .= "/g";
-  }
-  $file .= "/9" . substr($now, 1, 2);
-  $file .= "/6" . substr($now, 5, 2);
-?><!doctype html>
-<!-- 
-
-         _,..wWWw--.11/+'.            11_      ,.
-   ..wwWWWWWWWWW;7ooo8;11++++.        11.ll'  ,.++;"
-    `'"">wW7;oOOOOOO8;:11++\++.      11.;;; .;"+++'   ,..
-      ,ww7OOOOOOOO8,,,11++++\+++.    11lll',ll'++;  ,++;'
-     ,oOOOOOOOO8,,,,11+++++`'++9ll. 11;lll ll:+++' ;+++'
-    ;OOOOOOOOO8,,,'11++++++++++9lll 11;lll ll:++:'.+++'
-    OOOO;OOO"8,,"/;11++++,+,++++9ll`11:llllll++++'+++
-   OOOO;OO"8,,'11++'+++14;14###;"-11++9;;12X11 llll`;+++++++'  ,.    6,.      _
-  ;O;'oOOO8 ,'11+++14\,-6:  14###11++++9ll12X 11:l.;;;,--++."-+++++ 6w":---wWWWWWww-._
- ;'  /O'"'"11++++++14' 6:;0";14#11'11+++9lll12XX6,11llll;++.+++++++++6W,6"WWWWWWWWww;""""'`
-    ."     11`"+++++14'.13'"''`11;'9ll;12xXX6w11llll++;--.++++6;wWW;12xXXXXXXXXXx"6Ww.
-           .+++++++++++';12xXXXXX6;W11ll"+-"++,'---"-12.x""`"9lllllllx12XXx6WWw.
-           "12---'11++++++-;12XXXXXX6wWW11l"++++,"---++++"8,,,,,,,,,,;9lll12XXXx6WW,
-             `'""""',+12xXXXXX6;wWW11'+++++++++;;;"4;;;;7;;;;7oOo8,,,,,9;;12XXX6;WW`
-                   ,+12xXXXXX6wWw"11++.++++-.0;;11+++<'   4`"WWWww;7Oo8,,,9ll12XXX6"Ww
-                   +12xXXX6"wwW"11+++++'"--00'"'  )11+++     4`WWW"Ww7OO8,,9lll12XXX6ww
-                  ,X++++;"11+++++++++++0`., )  )11+++     4)W; ,W7OO8,,9lll12X:6"Ww
-                  :++++++++++++++++++++4W8'"-12:11++++    4.W'  WW7OO8,,9lll12X; 6`w
-                  .++++++++++++++++.+++4"ww 12:11+++'   4,"   ,WW7OO8,,9lll12X;  6;
-           ;ll--.-"`.;++++++++++++++.+++;+8.12;11++(         4:WW7OO8,,9lll12Xx
-          ,'lllllllll,++++;+++++++++;"++++++++++++-.    4:WW7OO8,,9lll12Xx
-          ;llll;;;"';'++++;'"""'''`` `lll;;:+++++++++.  4WW7OOO8,,9lll12X'
-         ,lllll,    ;+++++;            `"lllll.++++++++ 4WWw7O8,,,9ll12X;
-         lllllll,  ,++++++;               llllll+++++++.4:WWw8',,9ll12x
-        ,llllllll, ;++++++;               :llllll+++++++.4"WW8;,,9ll12x
-        ;lllllllllV+++++++;               :lllllll+++++++.4`w'8 `.9l12x.
-        `lllllllll'+++++++;               :lllllll++++++++  4`4\  12`,X\
-         "llllll;++++++++;                ;llllll'+++++++++   4`-  12\X;
-          "llll'+++++++++;               ;lllllll"+++++++++        12`)
-           `-'`+++++++++;'              ,llllllll++++++++++
-             +++++++++++;              ,llllllll'++++++++++
-            '++++++++++"               `""""""""'+++++++++"
-
--->
-<html lang="en-GB" dir="ltr">
+<!doctype html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="description" content="Put a pony in your placeholder.">
-  <meta name="keywords" content="my little pony, friendship is magic, mlp, fim, mlp:fim, ponies, bronies, design, placeholder, image, filler content, lorem ipsum, lorem pixel, lorem image, screenshot">
-  <meta name="author" content="Grey Hargreaves (http://greysadventures.com/)">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <link rel="shortcut icon" href="//placeponi.es/16">
-  <link rel="apple-touch-icon" sizes="144x144" href="//placeponi.es/144">
-  <link rel="apple-touch-icon" sizes="114x114" href="//placeponi.es/114">
-  <link rel="apple-touch-icon" sizes="72x72" href="//placeponi.es/72">
-  <link rel="apple-touch-icon" href="//placeponi.es/57">
-  <!--[if lt IE 9]>
-  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <[endif]-->
-  <title>placeponi.es &mdash; put a pony in your placeholder</title>
-  <style>
-    @font-face {
-      font-family: 'celestia_reduxmedium';
-      src: url('/a/celestiamediumredux1.55-webfont.eot');
-      src: url('/a/celestiamediumredux1.55-webfont.eot?#iefix') format('embedded-opentype'),
-           url('/a/celestiamediumredux1.55-webfont.woff') format('woff'),
-           url('/a/celestiamediumredux1.55-webfont.ttf') format('truetype'),
-           url('/a/celestiamediumredux1.55-webfont.svg#celestia_reduxmedium') format('svg');
-      font-weight: normal;
-      font-style: normal;
-    }
-    html,
-    body {
-      min-height: 100%;
-      margin: 0;
-      padding: 0;
-      position: relative;
-    }
-    body {
-      position: absolute;
-      top: 0; right: 0; bottom: 0; left: 0;
-      color: #fff;
-      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABhJREFUeNpiYGBgmPn//38GRhABAgABBgBBQAaVpWxAOAAAAABJRU5ErkJggg=="), url('<?php echo $file; ?>');
-      background-position: center center;
-      background-attachment: scroll;
-      -moz-background-size: auto auto, cover;
-           background-size: auto auto, cover;
-      font: 0.8em/1.5 "Helvetica Neue", Helvetica, Arial, FreeSans, sans-serif;
-      -webkit-box-shadow: inset 0px 0px 10em 5em rgba(0, 0, 0, .5);
-              box-shadow: inset 0px 0px 10em 5em rgba(0, 0, 0, .5);
-    }
-    a {
-      color: #fff; 
-    }
-    .container {
-      width: 300px;
-      padding: 15px;
-      position: fixed;
-      top: 0; left: 0; bottom: 0;
-      background-color: #222;
-      background-color: rgba(0, 0, 0, 0.75);
-    }
-    .branding {
-      text-align: center;
-    }
-    .branding h1 {
-      margin: 0;
-      font-size: 3em;
-      font-family: "celestia_reduxmedium", "Helvetica Neue", Helvetica, Arial, FreeSans, sans-serif;
-      font-weight: normal;
-    }
-    .branding strong {
-      font-size: 1.2em;
-    }
-    #main {
-      margin: 1em 0;
-    }
-    #main p:first-child {
-      font-weight: bold;
-    }
-    .examples label {
-      display: block;
-      font-size: 0.9em;
-    }
-    .examples input {
-      display: block;
-      -webkit-box-sizing: border-box;
-         -moz-box-sizing: border-box;
-              box-sizing: border-box;
-      width: 100%;
-      margin-bottom: 8px;
-      padding: 4px;
-      border: 1px solid #222;
-      -webkit-border-radius: 3px;
-         -moz-border-radius: 3px;
-              border-radius: 3px;
-      color: #fff;
-      background-color: #444;
-      background-color: rgba(60, 60, 60, 0.4);
-      font-size: 1.2em;
-    }
-    footer {
-      position: absolute;
-      bottom: 15px; right: 15px; left: 15px;
-    }
-    footer small {
-      display: block;
-      margin-top: 8px;
-    }
-    .github-link {
-      padding: 4px 4px 4px 24px;
-      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowNUNCRjhGMzkzRUUxMUUzQkE3QzgzNzA5MTNBOEYzNCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowNUNCRjhGNDkzRUUxMUUzQkE3QzgzNzA5MTNBOEYzNCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjA1Q0JGOEYxOTNFRTExRTNCQTdDODM3MDkxM0E4RjM0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjA1Q0JGOEYyOTNFRTExRTNCQTdDODM3MDkxM0E4RjM0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+JWeKAwAAAN1JREFUeNqkU4ERgyAMxBHsCKzACq7ACl3BFVihK7iCjsAKdgQ7Ag295/qmaOk1d38qJE/4vF1KyVTCCjx9PwSL4P6RmQkITjCn45gElmu4+JraYhN4TeBpM54UR+Rs6PZF0GMhRwDhIBjx5HdDV4yFYKQTgtKkBtbI64WhgYC1unXpPcc8qotpi1Kz/E1gSMAEQb9dwVH+bGCOX0Tc5bMoAd1M8AV3Y7GmXTqUhDzTFVMoV2LL+oqpZnaiQ2HAybbSurZzr/8FR6evJwSx2FgTFFuPBwQr9naTegowAG1a3rA1z5lXAAAAAElFTkSuQmCC);
-      background-position: 4px 4px;
-      background-repeat: no-repeat;
-      font-size: 90%;
-      font-weight: bold;
-      text-decoration: none;
-      line-height: 16px;
-    }
-    .github-link:hover,
-    .github-link:focus {
-      background-color: #333;
-    }
-  </style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="Put a pony in your placeholder.">
+	<meta name="keywords" content="my little pony, friendship is magic, mlp, fim, mlp:fim, ponies, bronies, design, designer, developer, development, placeholder, image, filler content, lorem ipsum, lorem pixel, lorem image, screenshot">
+	<link rel="icon" type="image/png" href="/32">
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/152">
+	<style>
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			min-height: 100%;
+		}
+		body {
+			background-color: #111;
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			font-family: sans-serif;
+			font-size: 14px;
+			line-height: 1.5em;
+		}
+		a {
+			color: inherit;
+		}
+		.wrapper {
+
+		}
+		.body {
+			max-width: 280px;
+			padding: 30px;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			color: #111;
+			background-color: #fff;
+			background-color: rgba(255, 255, 255, .95);
+			overflow: auto;
+		}
+		.header {
+			text-align: center;
+		}
+		.header__branding {
+			margin: 0;
+			margin-bottom: 8px;
+			font-size: 2.6em;
+		}
+		.header__tagline {
+			font-size: 1.15em;
+			font-weight: bold;
+		}
+		.main {
+
+		}
+		.content {
+
+		}
+		.example {
+			margin-bottom: 10px;
+		}
+		.example__label {
+			display: block;
+			margin-bottom: 4px;
+		}
+		.example__input {
+			box-sizing: border-box;
+			width: 100%;
+			margin-bottom: 5px;
+			padding: 5px;
+			border: 1px solid #ddd;
+			font-family: inherit;
+			font-size: inherit;
+		}
+		.footer {
+			margin-top: 120px;
+			font-size: 11px;
+			line-height: 14px;
+		}
+		.footer__github {
+			font-weight: bold;
+			text-decoration: none;
+		}
+		.footer__github::before {
+			content: "";
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			margin-right: 5px;
+			margin-bottom: 5px;
+			background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20height%3D%2216%22%20width%3D%2216%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%3Cpath%20d%3D%22M8%200C3.58%200%200%203.58%200%208c0%203.54%202.29%206.53%205.47%207.59%200.4%200.07%200.55-0.17%200.55-0.38%200-0.19-0.01-0.82-0.01-1.49-2.01%200.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53%200.63-0.01%201.08%200.58%201.23%200.82%200.72%201.21%201.87%200.87%202.33%200.66%200.07-0.52%200.28-0.87%200.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95%200-0.87%200.31-1.59%200.82-2.15-0.08-0.2-0.36-1.02%200.08-2.12%200%200%200.67-0.21%202.2%200.82%200.64-0.18%201.32-0.27%202-0.27%200.68%200%201.36%200.09%202%200.27%201.53-1.04%202.2-0.82%202.2-0.82%200.44%201.1%200.16%201.92%200.08%202.12%200.51%200.56%200.82%201.27%200.82%202.15%200%203.07-1.87%203.75-3.65%203.95%200.29%200.25%200.54%200.73%200.54%201.48%200%201.07-0.01%201.93-0.01%202.2%200%200.21%200.15%200.46%200.55%200.38C13.71%2014.53%2016%2011.53%2016%208%2016%203.58%2012.42%200%208%200z%22%20%2F%3E%0A%3C%2Fsvg%3E");
+			background-size: contain;
+			background-repeat: no-repeat;
+			vertical-align: middle;
+		}
+		.footer__boilerplate {
+			display: block;
+			font-size: 1em;
+			opacity: .7;
+		}
+	</style>
+	<title>placeponi.es / put a pony in your placeholder</title>
 </head>
 <body>
-  <div class="container">
-    <header class="branding">
-      <h1>placeponi.es</h1>
-      <strong>put a pony in your placeholder</strong>
-    </header>
-    <div id="main">
-      <p>Using cats and puppies for placeholder images is cool, but using ponies is 20% cooler.</p>
-      <p>That's why Placeponi.es exists, a quick and easy way to throw everyone's favourite candy-coloured equines into your latest wireframe or mockup, just stick in a width and height and away you go!</p>
-      <div class="examples">
-        <label for="standard">
-          Link like so:
-          <input type="text" id="standard" value="http://placeponi.es/400/300" readonly>
-        </label>
-        <label for="greyscale">
-          Or for greyscale:
-          <input type="text" id="greyscale" value="http://placeponi.es/g/400/300" readonly>
-        </label>
-      </div>
-    </div>
-    <footer>
-      <a href="https://github.com/querkmachine/placeponi.es" class="github-link">Source on GitHub</a>
-      <small>
-        My Little Pony: Friendship is Magic is &copy; Hasbro. Placeponi.es is not affiliated in any way with Hasbro or DHX Media. No copyright infringement intended. Another one of <a href="//greysadventures.com">Grey's Adventures</a>.
-      </small>
-    </footer>
-  </div>
-  <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-31842948-3']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-  </script>
+	<div class="wrapper">
+		<article class="body">
+			<header class="header">
+				<h1 class="header__branding">placeponi.es</h1>
+				<div class="header__tagline">put a pony in your placeholder</div>
+			</header>
+			<main class="main">
+				<div class="content">
+					<p><em>Using cats and puppies for placeholder images is cool, but using ponies is 20% cooler!</em> That's why <b>placeponi.es</b> exists, a quick and easy way to throw everyone's favourite candy-coloured equines into your latest wireframe or mockup, just stick in a width and height and away you go!</p>	
+				</div>
+				<div class="example">
+					<label class="example__label">Generate 400&times;300 image</label>
+					<input type="text" class="example__input" readonly value="http://placeponi.es/400/300">
+				</div>
+				<div class="example">
+					<label class="example__label">Generate grayscale image</label>
+					<input type="text" class="example__input" readonly value="http://placeponi.es/400/300/g">
+				</div>
+				<div class="example">
+					<label class="example__label">Generate multiple images with the same dimensions</label>
+					<input type="text" class="example__input" readonly value="http://placeponi.es/400/300/1">
+					<input type="text" class="example__input" readonly value="http://placeponi.es/400/300/2">
+					<input type="text" class="example__input" readonly value="http://placeponi.es/400/300/3">
+				</div>
+			</main>
+			<footer class="footer">
+				<a class="footer__github" href="https://github.com/querkmachine/placeponi.es">placeponi.es on GitHub</a>
+				<small class="footer__boilerplate">
+					My Little Pony: Friendship is Magic is &copy; Hasbro. placeponi.es is not affiliated in any way with Hasbro or DHX Media. No copyright infringement intended. Another one of <a href="http://greysadventures.com/">Grey's Adventures</a>.
+				</small>
+			</footer>
+		</article>
+	</div>
+	<script>
+		// From https://davidwalsh.name/javascript-debounce-function
+		function debounce(func, wait, immediate) {
+			var timeout;
+			return function() {
+				var context = this, args = arguments;
+				var later = function() {
+					timeout = null;
+					if (!immediate) func.apply(context, args);
+				};
+				var callNow = immediate && !timeout;
+				clearTimeout(timeout);
+				timeout = setTimeout(later, wait);
+				if (callNow) func.apply(context, args);
+			};
+		};
+		var setBackgroundImage = debounce(function() {
+			var width = window.innerWidth;
+			var height = window.innerHeight;
+			document.body.style.backgroundImage = "url(/" + width + "/" + height + ")";
+		}, 250);
+		document.onload = setBackgroundImage();
+		window.onresize = function() { setBackgroundImage(); }
+	</script>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-31842948-3', 'auto');
+		ga('send', 'pageview');
+	</script>
 </body>
 </html>
