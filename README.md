@@ -20,12 +20,22 @@ Add `/regen/` anywhere in the URL to replace the existing image of this type.
 
 ## Changelog 
 
-### 2.0
+### 2.0.1 
+* Re-enable logging for images with a referrer of placeponi.es. 
+
+### 2.0.0
 * Refactor basically everything.
 * Now supports generating images larger than the source image.
 * Now supports generating more that one image with the same dimensions. 
 * Now supports putting URL parameters in (almost) any order.
-* Added simple (and very unfinished) analytics page. 
+* Added simple (and very unfinished) logging page. 
 
-### 1.0
+### 1.1.1
+* Fix issue caused by there being no referrer information available.
+* Simplify how `img.php` grabs URL parameters.
+
+### 1.1.0
+* Add referrer tracking.
+
+### 1.0.0
 * Initial release.
