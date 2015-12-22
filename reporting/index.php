@@ -14,7 +14,7 @@
 	<main class="main">
 		<section class="group group--3">
 			<div class="group__item">
-				<article class="report">
+				<article class="report" id="referrers-day">
 					<header class="report__header">
 						Referrers (last 24 hours)
 					</header>
@@ -34,7 +34,7 @@
 				</article>
 			</div>
 			<div class="group__item">
-				<article class="report">
+				<article class="report" id="referrers-month">
 					<header class="report__header">
 						Referrers (last month)
 					</header>
@@ -54,7 +54,7 @@
 				</article>
 			</div>
 			<div class="group__item">
-				<article class="report">
+				<article class="report" id="referrers-all">
 					<header class="report__header">
 						Referrers (all time)
 					</header>
@@ -74,7 +74,7 @@
 				</article>
 			</div>
 			<div class="group__item">
-				<article class="report">
+				<article class="report" id="sizes-all">
 					<header class="report__header">
 						Most requested (all time)
 					</header>
@@ -94,7 +94,7 @@
 				</article>
 			</div>
 			<div class="group__item">
-				<article class="report">
+				<article class="report" id="dates-year">
 					<header class="report__header">
 						Busiest days (last year)
 					</header>
@@ -114,7 +114,7 @@
 				</article>
 			</div>
 			<div class="group__item">
-				<article class="report">
+				<article class="report" id="dates-all">
 					<header class="report__header">
 						Busiest days (all time)
 					</header>
@@ -134,7 +134,7 @@
 				</article>
 			</div>
 			<div class="group__item group__item--wider">
-				<article class="report">
+				<article class="report" id="recent">
 					<header class="report__header">
 						Recent requests
 					</header>

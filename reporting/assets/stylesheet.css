@@ -118,14 +118,17 @@ body {
 }
 
 .table .img-w {
+	width: 45px;
 	text-align: right;
 }
 
 .table .img-h {
+	width: 45px;
 	text-align: left;
 }
 
 .table .img-sep {
+	width: 15px;
 	text-align: center;
 }
 
