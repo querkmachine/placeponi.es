@@ -297,7 +297,6 @@
 					Mustache.parse(template);
 					var output;
 					$.each(data, function(i, row) {	
-						console.log(row);
 						output += Mustache.render(template, row);
 					});
 					$target.html(output);

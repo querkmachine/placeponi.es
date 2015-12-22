@@ -20,6 +20,10 @@ Add `/regen/` anywhere in the URL to replace the existing image of this type.
 
 ## Changelog 
 
+### 2.1.0
+* Redesign reporting panel.
+* Add trial. Script now redirects to a generated image file instead of reading it into the current page.
+
 ### 2.0.1 
 * Re-enable logging for images with a referrer of placeponi.es. 
 
