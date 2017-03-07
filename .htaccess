@@ -1,6 +1,6 @@
 RewriteEngine On
 RewriteBase /
 
-RewriteCond %{REQUEST_URI} !^/(reporting|generated)(/.*|)$ [NC]
+RewriteCond %{REQUEST_URI} !^/reporting(/.*|)$ [NC]
 RewriteCond %{REQUEST_URI} !/index\.php$ [NC]
 RewriteRule ^([a-zA-Z0-9\/\-\_,]+)$ img.php?params=$1 [L]

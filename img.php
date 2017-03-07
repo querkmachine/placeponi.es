@@ -55,12 +55,11 @@ if($imageVariant < 0) { $imageVariant = 0; }
 else if($imageVariant > 9) { $imageVariant = 9; }
 else { $imageVariant = floor($imageVariant); }
 
-// Get the associated filename
-$filename = Config::DIR_GENERATED . md5("{$imageWidth}_{$imageHeight}_{$imageVariant}_{$imageGrayscale}") . ".png";
-$filenameLocal = getcwd() . $filename;
+// Create new filename
+$newFilename = getcwd() . Config::DIR_GENERATED . md5("{$imageWidth}_{$imageHeight}_{$imageVariant}_{$imageGrayscale}") . ".png";
 
 // If the file doesn't exist, create it 
-if(!file_exists($filenameLocal) || $imageRegen === true) {
+if(!file_exists($newFilename) || $imageRegen === true) {
 	$imageRegen = true;
 	// First, pick something at random...
 	$listFiles = glob(getcwd() . Config::DIR_SOURCE . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
@@ -72,7 +71,7 @@ if(!file_exists($filenameLocal) || $imageRegen === true) {
 		$workingFile->grayscaleImage();
 	}
 	// ...and then save it out
-	$workingFile->saveImage($filenameLocal, 100);
+	$workingFile->saveImage($newFilename, 100);
 }
 
 // Connect to the database to log this shizzle
@@ -98,4 +97,5 @@ catch(PDOException $e) {
 }
 
 // Output the requested image
-header("Location: " . $filename);
+header("Content-type: image/png");
+readfile($newFilename);
