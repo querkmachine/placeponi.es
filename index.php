@@ -118,17 +118,17 @@
 				</div>
 				<div class="example">
 					<label class="example__label">Generate 400&times;300 image</label>
-					<input type="text" class="example__input" readonly value="http://placeponi.es/400/300">
+					<input type="text" class="example__input" readonly value="https://placeponi.es/400/300">
 				</div>
 				<div class="example">
 					<label class="example__label">Generate grayscale image</label>
-					<input type="text" class="example__input" readonly value="http://placeponi.es/400/300/g">
+					<input type="text" class="example__input" readonly value="https://placeponi.es/400/300/g">
 				</div>
 				<div class="example">
 					<label class="example__label">Generate multiple images with the same dimensions</label>
-					<input type="text" class="example__input" readonly value="http://placeponi.es/400/300/1">
-					<input type="text" class="example__input" readonly value="http://placeponi.es/400/300/2">
-					<input type="text" class="example__input" readonly value="http://placeponi.es/400/300/3">
+					<input type="text" class="example__input" readonly value="https://placeponi.es/400/300/1">
+					<input type="text" class="example__input" readonly value="https://placeponi.es/400/300/2">
+					<input type="text" class="example__input" readonly value="https://placeponi.es/400/300/3">
 				</div>
 			</main>
 			<footer class="footer">
