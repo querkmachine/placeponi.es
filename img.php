@@ -98,7 +98,4 @@ catch(PDOException $e) {
 }
 
 // Output the requested image
-header("Content-type: image/png");
-header("Cache-Control: public, max-age=31536000");
-header("Expires: " . date("r", strtotime("+1 year")));
 header("Location: " . $filename);
