@@ -4,6 +4,8 @@
 require_once("config.php");
 require_once("functions.php");
 
+$startTime = microtime(true);
+
 // Default properties
 $imageWidth = 400;
 $imageHeight = $imageWidth;
@@ -75,12 +77,14 @@ if(!file_exists($filenameLocal) || $imageRegen === true) {
 	$workingFile->saveImage($filenameLocal, 100);
 }
 
+$timeElapsed = microtime(true) - $startTime;
+
 // Connect to the database to log this shizzle
 try {
 	$db = new PDO("mysql:host=".Config::DB_HOST.";dbname=".Config::DB_NAME, Config::DB_USER, Config::DB_PASS);
 	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-	$query = $db->prepare("INSERT INTO visits (requestDatetime, imageWidth, imageHeight, imageGreyscale, imageVariant, imageGenerated, referrerUrl, referrerDomain) VALUES (:datetime, :width, :height, :greyscale, :variant, :generated, :url, :domain)");
+	$query = $db->prepare("INSERT INTO visits (requestDatetime, imageWidth, imageHeight, imageGreyscale, imageVariant, imageGenerated, referrerUrl, referrerDomain, requestResponseTime) VALUES (:datetime, :width, :height, :greyscale, :variant, :generated, :url, :domain, :response)");
 	$query->execute(array(
 		"datetime" => date("Y-m-d H:i:s"),
 		"width" => $imageWidth, 
@@ -89,7 +93,8 @@ try {
 		"variant" => $imageVariant,
 		"generated" => $imageRegen,
 		"url" => $referrer,
-		"domain" => parse_url($referrer, PHP_URL_HOST)
+		"domain" => parse_url($referrer, PHP_URL_HOST),
+		"response" => $timeElapsed
 	));
 }
 catch(PDOException $e) {
