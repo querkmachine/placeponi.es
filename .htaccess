@@ -5,6 +5,11 @@ RewriteCond %{REQUEST_URI} !^/(reporting|generated)(/.*|)$ [NC]
 RewriteCond %{REQUEST_URI} !/index\.php$ [NC]
 RewriteRule ^([a-zA-Z0-9\/\-\_,]+)$ img.php?params=$1 [L]
 
+<IfModule mod_expires.c>
+ExpiresActive On 
+ExpiresByType image/png "access plus 1 year"
+</IfModule>
+
 <FilesMatch "\.(png|jpeg|jpg|gif|css)$">
 Header set Cache-Control "max-age=31536000, public"
 </FilesMatch>
