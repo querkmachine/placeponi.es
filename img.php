@@ -50,7 +50,7 @@ else if($imageWidth > 5000) { $imageWidth = 5000; }
 else { $imageWidth = floor($imageWidth); }
 
 if($imageHeight < 1) { $imageHeight = 1; }
-else if($imageHeight > 5000) { $imageWidth = 5000; }
+else if($imageHeight > 5000) { $imageHeight = 5000; }
 else { $imageHeight = floor($imageHeight); }
 
 if($imageVariant < 0) { $imageVariant = 0; }
