@@ -10,6 +10,7 @@ $startTime = microtime(true);
 $imageWidth = 400;
 $imageHeight = $imageWidth;
 $imageVariant = 0;
+$imageEpisode = false;
 $imageGrayscale = false;
 $imageRegen = false;
 
@@ -26,6 +27,9 @@ for($i = 0; $i < count($parameters); $i++) {
 	}
 	else if($value === "regen") {
 		$imageRegen = true;
+	}
+	else if(preg_match('/S[0-9]E[0-9]{2}/i', $value)) {
+		$imageEpisode = strtoupper($value);
 	}
 	else if(is_numeric($value)) {
 		switch($numericParamCounter) {
@@ -58,14 +62,18 @@ else if($imageVariant > 9) { $imageVariant = 9; }
 else { $imageVariant = floor($imageVariant); }
 
 // Get the associated filename
-$filename = Config::DIR_GENERATED . md5("{$imageWidth}_{$imageHeight}_{$imageVariant}_{$imageGrayscale}") . ".png";
+$filename = Config::DIR_GENERATED . md5("{$imageWidth}_{$imageHeight}_{$imageVariant}_{$imageGrayscale}_{$imageEpisode}") . ".png";
 $filenameLocal = getcwd() . $filename;
 
 // If the file doesn't exist, create it 
 if(!file_exists($filenameLocal) || $imageRegen === true) {
 	$imageRegen = true;
-	// First, pick something at random...
-	$listFiles = glob(getcwd() . Config::DIR_SOURCE . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+	// Pick something at random (unless the user has specified an episode)...
+	$searchFilename = '*.{jpg,jpeg,png,gif}';
+	if($imageEpisode && count(glob(getcwd() . Config::DIR_SOURCE . $searchFilename, GLOB_BRACE)) > 0) {
+		$searchFilename = $imageEpisode . '_' . $searchFilename;
+	}
+	$listFiles = glob(getcwd() . Config::DIR_SOURCE . $searchFilename, GLOB_BRACE);
 	$workingFile = $listFiles[array_rand($listFiles)];
 	// ...run it through the appropriate processing...
 	$workingFile = new resize($workingFile);
